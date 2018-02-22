@@ -17,10 +17,12 @@
 		<div class="form-group">
 			<input type="text" placeholder="senha" name="senha" class="form-control" required="required"/>
 		</div>
+		<br/>
 		<button type="submit" class="btn btn-success">Salvar</button>
 	</form>
 </div>
-
+<br/>
+<br/>
 <div class="table-responsive">
 	<table class="table table-striped">
 		<thead>
@@ -46,6 +48,7 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	<br/>
 	<form class="form-group"
 		action="listaUsuarios" method="post">
 		<button type="submit" class="btn btn-default">Ver usuários</button>

@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +15,7 @@ import br.unisal.dao.UsuarioDAO;
 import br.unisal.model.Usuario;
 import br.unisal.util.Constantes;
 
-@WebServlet(name = "UsuarioInsertController", description = "Controlador para inserir usuários", urlPatterns = { "/salvarUsuario" })
+@WebServlet(name = "UsuarioInsertController", description = "Controlador para inserir usuários", urlPatterns = "/salvarUsuario")
 public class UsuarioInsertController extends HttpServlet{
 
 	/**
@@ -28,7 +27,6 @@ public class UsuarioInsertController extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		super.doPost(req, resp);
 		
 		Usuario usuario = new Usuario(req.getParameter("nome"), 
 				req.getParameter("email"), 
@@ -47,8 +45,7 @@ public class UsuarioInsertController extends HttpServlet{
 		}
 				
 		req.setAttribute("usuarios", usuarios);
-		RequestDispatcher dispatcher = req.getRequestDispatcher(Constantes.raiz + "inicio.jsp");
-		dispatcher.forward(req, resp);
+		req.getRequestDispatcher(Constantes.raizPages + "inicio.jsp").forward(req, resp);
 	}
 
 }

@@ -11,3 +11,5 @@
 	<div>
 		<c:import url="../pages/logout.jsp" />
 	</div>
+	<br/>
+	<br/>
